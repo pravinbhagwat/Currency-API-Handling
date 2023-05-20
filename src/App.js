@@ -11,7 +11,7 @@ function App() {
         return result.json();
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCurrencies(data);
       })
       .catch((err) => {
@@ -20,19 +20,28 @@ function App() {
 
   }, []);
 
-  
-
-
 
   return (
     <div className="App">
        <table>
-        {
-          currencies!=="" &&
-          currencies.map((currency, index)=>{
-            return <TableRow name={currency.name} symbol = {currency.symbol} current_price = {currency.current_price} fully_diluted_valuation = {currency.fully_diluted_valuation} market_cap = {currency.market_cap} image = {currency.image} price_change_percentage={currency.price_change_percentage_24h} index={index}></TableRow>
-          })
-        }
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Symbol</th>
+            <th>Current Price</th>
+            <th>Total Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            currencies!=="" &&
+            currencies.map((currency, index)=>{
+              return <TableRow obj = {currency} index = {index}></TableRow>
+            })
+          }
+        </tbody>
        </table>
     </div>
   );

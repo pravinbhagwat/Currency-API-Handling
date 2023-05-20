@@ -3,22 +3,19 @@ body{
   color: white;
 }
 table{
-  width: 95%;
-  border-collapse: collapse;
-  margin: 40px auto;
-  /* border: 1px solid white; */
+  width: 100%;
+  text-align: center;
+
 }
 tr{
- border-bottom: 1px solid white;
  height: 80px;
+}
+
+table thead tr td {
+  border: 1px solid white;
+  padding: 10px;
 }
 
 .ele-row img{
   width: 40px;
-}
-.pos{
-  color: rgb(19, 202, 19);
-}
-.neg{
-  color: rgb(233, 69, 69);
 }
